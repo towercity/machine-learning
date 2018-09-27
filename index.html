@@ -13,17 +13,25 @@
     <p>
       Please teach me something interesting using the form below. Just enter the information in the text box and hit 'Submit', and then I will learn it. It's just like a little classroom, except on your computer screen! It can be any piece of information--the distance between the earth and the sun, or what you just said to your sister on the phone. Just make sure it's not something I already know, ha ha ha, or I won't get to learn.
     </p>
-    <div>
-      <form id="knowledge">
+    <div id="app-box">
+      <div id="knowledge">
         <textarea name="knowledge" cols="90" rows="10"></textarea>
         <br>
-        <button onclick="">Submit</button>
-      </form>
+        <button onclick="teachDexter();">Submit</button>
+      </div>
+
+      <p id="response" style="display:none;">
+        Thank you... <br> I am learning...
+      </p>
     </div>
   </article>
 
   <footer>
     <p>©2018, Dexter Learn Labs, San Fransisco, CA</p>
   </footer>
+
+
+
+  <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
