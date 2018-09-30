@@ -5,6 +5,7 @@ function teachDexter() {
 
   //clear textbox, delayed so user is disctracted by modal
   setTimeout(function() { textBox.value = ''; }, 200);
+  setTimeout(function() { document.getElementById("email").value = ''; }, 200);
 
   var dexterTextArray = ["Wow...<span></span><span></span><span></span><span></span><br>" +
                         "I didn't know that " + '"' + userString + '"...<span></span><span></span><span></span><span></span><br>' +
