@@ -6,9 +6,14 @@ function teachDexter() {
   //clear textbox, delayed so user is disctracted by modal
   setTimeout(function() { textBox.value = ''; }, 200);
 
-  //textBox.style.display = "none";
-  response.innerHTML = "Wow...<br>" +
-                        "I didn't know that " +
-                        '"' + userString + '"<br>' +
-                        "Thank you...<br> I am learning...";
+  var dexterTextArray = ["Wow...<span></span><span></span><span></span><span></span><br>" +
+                        "I didn't know that " + '"' + userString + '"...<span></span><span></span><span></span><span></span><br>' +
+                        "Thank you...<span></span><span></span><span></span><span></span><br>"  +
+                        "I am learning lots..."];
+
+  var typed = new Typed(response, {
+    strings: dexterTextArray,
+    typeSpeed: 50,
+    startDelay: 900
+  })
 }
