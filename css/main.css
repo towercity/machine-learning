@@ -1,3 +1,11 @@
+.btn {
+  background-color: #0097A7;
+}
+
+a {
+  color: #0097A7;
+}
+
 .splash-header {
   height: 66vh;
   position: relative;
