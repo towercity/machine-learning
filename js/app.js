@@ -23,5 +23,5 @@ function teachDexter() {
   console.log("'Thank you for visiting my console! I'm sure you'll have a lot of fun tinkering around in my insides!'");
   console.log("     --DL");
   console.log("");
-  console.log("'Please visit http://www.matthewjnerger.com/machine-learning/credits/ to learn more about how I was made, and by whom!'");
+  console.log("'Please visit http://www.matthewjnerger.com/machine-learning/credits/index.html to learn more about how I was made, and by whom!'");
   console.log("     --DL");
