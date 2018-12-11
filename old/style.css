@@ -1,3 +1,9 @@
 body {
   background: black;
 }
+#machineScreen {
+  border: 1px solid white;
+  margin: 50px auto;
+  position: absolute;
+  left: calc(50% - 250px);
+}
