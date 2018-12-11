@@ -6,4 +6,5 @@ body {
   margin: 50px auto;
   position: absolute;
   left: calc(50% - 250px);
+  border-radius: 10px;
 }
