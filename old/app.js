@@ -16,6 +16,11 @@ var Game = {
     context.font = "20px 'courier'";
     context.fillText(this.screenText, 40, (canvas.height - 140));
 
+    // Blinker
+    if( textFrame != 0 ) {
+      context.fillRect((context.measureText(this.screenText).width + 44), (canvas.height - 156), 4, 20);
+    }
+
     setTimeout(function() {
       if (Game.displayText != Game.screenText) {
         Game.screenText += Game.displayText[textFrame];
