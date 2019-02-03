@@ -3,9 +3,24 @@ var context = canvas.getContext("2d");
 
 var Game = {
   render: function(frame, textFrame) {
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    this.draw(frame, textFrame);
 
+    this.displayText = this.textsArray[this.displayIndex];
     var newFrame = frame + 1;
+
+    setTimeout(function() {
+      if (Game.displayText != Game.screenText) {
+        Game.screenText += Game.displayText[textFrame];
+
+        Game.render(newFrame, textFrame + 1);
+      } else {
+        Game.render(newFrame, 0);
+      }
+    }, 100, this);
+  },
+
+  draw: function(frame, textFrame) {
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
     // Draw the text box
     context.strokeStyle = "#29ADFF";
@@ -26,20 +41,16 @@ var Game = {
         context.fillRect((context.measureText(this.screenText).width + 44), (canvas.height - 156), 4, 20);
       }
     }
-
-    setTimeout(function() {
-      if (Game.displayText != Game.screenText) {
-        Game.screenText += Game.displayText[textFrame];
-
-        Game.render(newFrame, textFrame + 1);
-      } else {
-        Game.render(newFrame, 0);
-      }
-    }, 100, this);
   },
 
-  displayText: ">> Hello! My name is Dexter Learn...",
+  displayText: "",
   screenText: "",
+
+  textsArray: [
+    ">> Hello! My name is Dexter Learn......",
+    ">> Tell me something new......"
+  ],
+  displayIndex: 0
 }
 
 Game.render(0, 0);
