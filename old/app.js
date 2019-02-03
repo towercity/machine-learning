@@ -41,14 +41,14 @@ var Game = {
     // Draw the text
     context.fillStyle = "#29ADFF";
     context.font = "20px 'courier'";
-    context.fillText(this.screenText, 40, (canvas.height - 140));
+    context.fillText((">> " + this.screenText), 40, (canvas.height - 140));
 
     // Blinking Cursor
     if( textFrame != 0 ) {
-      context.fillRect((context.measureText(this.screenText).width + 44), (canvas.height - 156), 4, 20);
+      context.fillRect((context.measureText(this.screenText).width + 80), (canvas.height - 156), 4, 20);
     } else {
       if ((frame % 6 == 0) || ((frame + 1) % 6 == 0)) {
-        context.fillRect((context.measureText(this.screenText).width + 44), (canvas.height - 156), 4, 20);
+        context.fillRect((context.measureText(this.screenText).width + 80), (canvas.height - 156), 4, 20);
       }
     }
   },
@@ -64,8 +64,8 @@ var Game = {
   screenText: "",
 
   textsArray: [
-    ">> Hello! My name is Dexter Learn......",
-    ">> Tell me something new......"
+    "Hello! My name is Dexter Learn......",
+    "Tell me something new......"
   ],
   displayIndex: 0,
   keyPressed: false
