@@ -3,5 +3,7 @@ body {
 }
 #machineScreen {
   position: absolute;
-  width: 100%;
+  width: 780px;
+  position: fixed;
+  bottom: 0;
 }
