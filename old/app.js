@@ -7,16 +7,26 @@ var Game = {
 
     this.displayText = this.textsArray[this.displayIndex];
     var newFrame = frame + 1;
+    var newTextFrame = textFrame + 1;
+
+    if (Game.displayText != Game.screenText) {
+      Game.screenText += Game.displayText[textFrame];
+    } else {
+      newTextFrame = 0;
+      if (this.keyPressed) {
+        this.nextText();
+      }
+    }
+
+    // My hacked-at-it way of checking for an enter press; the logic to detect
+    // key presses takes place out of the game function, and then every frame
+    // the enter key is unpressed -- this is really bad code, I know, and I plan
+    // to fix it
+    this.keyPressed = false;
 
     setTimeout(function() {
-      if (Game.displayText != Game.screenText) {
-        Game.screenText += Game.displayText[textFrame];
-
-        Game.render(newFrame, textFrame + 1);
-      } else {
-        Game.render(newFrame, 0);
-      }
-    }, 100, this);
+      Game.render(newFrame, newTextFrame);
+    }, 100);
   },
 
   draw: function(frame, textFrame) {
@@ -43,6 +53,13 @@ var Game = {
     }
   },
 
+  nextText: function() {
+    if(this.displayIndex < (this.textsArray.length - 1)) {
+      this.screenText = "";
+      this.displayIndex = this.displayIndex + 1;
+    }
+  },
+
   displayText: "",
   screenText: "",
 
@@ -50,7 +67,16 @@ var Game = {
     ">> Hello! My name is Dexter Learn......",
     ">> Tell me something new......"
   ],
-  displayIndex: 0
+  displayIndex: 0,
+  keyPressed: false
 }
+
+function isEnterPressed (e) {
+  if(e.code === 'Enter') {
+    Game.keyPressed = true;
+  }
+}
+
+window.addEventListener('keydown', isEnterPressed);
 
 Game.render(0, 0);
