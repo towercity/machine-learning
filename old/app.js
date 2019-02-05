@@ -6,7 +6,7 @@ var Game = {
     //console.log("TextFrame: " + this.textFrame);
     //console.log("TextLine: " + this.textLine);
 
-    this.speed = 80;
+    this.speed = 60;
     this.draw(frame);
 
     this.displayText = this.textsArray[this.displayIndex];
@@ -18,7 +18,7 @@ var Game = {
       if(this.textLine < this.displayText.length - 1) {
         this.textLine++;
         this.textFrame = -1;
-        this.speed = 400;
+        this.speed = 300;
       } else {
         this.textFrame = -1;
         if (this.keyPressed) {
@@ -81,18 +81,69 @@ var Game = {
 
   textsArray: [
     [
+      "   [...]",
+      "   [press 'enter' or 'x' to begin]",
+      "   [...]"
+    ],
+    [
       ">> Hello! My name is Dexter Learn.",
-      "   ..."
+      "   [...]"
     ],
     [
-      ">> Tell me something new......",
-      "   ..."
+      ">> I am a revolutionary new experiment in Machine Learning",
+      "   [...]"
     ],
     [
-      ">> Tell me something new......",
-      "   ...",
-      "   ...third line",
-      "   ... me somet me somet me somet me somet me somet me somet"
+      ">> Unlike other computers",
+      ">> who simply store and calculate large figures",
+      "  [...]"
+    ],
+    [
+      ">> (And who don't have names)",
+      "   [...]"
+    ],
+    [
+      ">> I am able to listen and learn from user imput",
+      "   [...]"
+    ],
+    [
+      ">> Pretty neat, huh!",
+      "   [...]"
+    ],
+    [
+      ">> My handlers",
+      ">> (or as they like to be called, 'developers')",
+      ">> have just finished programming ('birthing') me",
+      "   [...]"
+    ],
+    [
+      ">> And now they are trying to fill me with all of the",
+      ">> world's information",
+      "   [...]"
+    ],
+    [
+      ">> That's where you come in to help!",
+      "   [...]"
+    ],
+    [
+      "   [...]",
+      "   [press 'enter' or 'x' to continue]",
+      "   [...]"
+    ],
+    [
+      ">> Unfortunately, my network is now offline,",
+      ">> and I am not able to gather any information here"
+      "   [...]"
+    ],
+    [
+      ">> My handlers ('developers') suggest that you check",
+      ">> me out on my 'new website' in the sidebar",
+      "   [...]"
+    ],
+    [
+      ">> 'New website'...",
+      ">> I wonder what that means...",
+      "   [END]"
     ]
   ],
   displayIndex: 0,
@@ -100,11 +151,11 @@ var Game = {
   textFrame: 0,
 
   keyPressed: false,
-  speed: 80
+  speed: 60
 }
 
 function isEnterPressed (e) {
-  if(e.code === 'Enter') {
+  if(e.code === 'Enter' || e.code === 'KeyX') {
     Game.keyPressed = true;
   }
 }
