@@ -132,7 +132,7 @@ var Game = {
     ],
     [
       ">> Unfortunately, my network is now offline,",
-      ">> and I am not able to gather any information here"
+      ">> and I am not able to gather any information here",
       "   [...]"
     ],
     [
