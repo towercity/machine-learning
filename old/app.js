@@ -103,7 +103,7 @@ var Game = {
       "   [...]"
     ],
     [
-      ">> I am able to listen and learn from user imput",
+      ">> I am able to listen to and learn from user input",
       "   [...]"
     ],
     [
