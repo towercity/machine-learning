@@ -7,3 +7,12 @@ body {
   position: fixed;
   bottom: 0;
 }
+header {
+  font-size: 0.95em;
+  padding: 5px;
+  font-family: monospace;
+}
+header a {
+  color: #29ADFF;
+  text-decoration: none;
+}
