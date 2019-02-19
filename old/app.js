@@ -6,7 +6,8 @@ var Game = {
     //console.log("TextFrame: " + this.textFrame);
     //console.log("TextLine: " + this.textLine);
 
-    this.speed = 60;
+    var speed = this.getSpeed();
+
     this.draw(frame);
 
     this.displayText = this.textsArray[this.displayIndex];
@@ -37,7 +38,7 @@ var Game = {
 
     setTimeout(function() {
       Game.render(newFrame);
-    }, this.speed);
+    }, speed);
   },
 
   draw: function(frame) {
@@ -73,6 +74,14 @@ var Game = {
       this.displayIndex = this.displayIndex + 1;
       this.textLine = 0;
       this.textFrame = -1;
+    }
+  },
+
+  getSpeed: function() {
+    if (Game.keyPressed) {
+      return 1;
+    } else {
+      return 60;
     }
   },
 
@@ -150,8 +159,7 @@ var Game = {
   textLine: 0,
   textFrame: 0,
 
-  keyPressed: false,
-  speed: 60
+  keyPressed: false
 }
 
 function isEnterPressed (e) {
