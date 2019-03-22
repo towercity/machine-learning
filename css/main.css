@@ -21,12 +21,12 @@ a {
 .splash-header span {
   position: absolute;
   bottom: 25px;
-  left: 50px;
+  left: 5vw;
   font-size: 50px;
 }
 
 .splash-header h1 {
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3)
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .vert-spacer {
