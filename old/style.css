@@ -1,6 +1,14 @@
 body {
   background: #000;
 }
+.background {
+  font-size:4px;
+  font-family:'Courier', monospace;
+  position:fixed;
+  right:0px;
+  top:0;
+  z-index:-1;
+}
 #machineScreen {
   position: absolute;
   width: 780px;

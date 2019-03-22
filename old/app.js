@@ -1,6 +1,9 @@
 var canvas = document.getElementById("machineScreen");
 var context = canvas.getContext("2d");
 
+canvas.width = 780;
+canvas.height = 190;
+
 var Game = {
   render: function(frame) {
     //console.log("TextFrame: " + this.textFrame);
@@ -52,7 +55,7 @@ var Game = {
 
     // Draw the text
     context.fillStyle = "#29ADFF";
-    context.font = "20px 'courier'";
+    context.font = "20px 'Courier'";
     context.fillText((this.screenText[0]), 40, (canvas.height - 140));
     context.fillText((this.screenText[1]), 40, (canvas.height - 110));
     context.fillText((this.screenText[2]), 40, (canvas.height - 80));
