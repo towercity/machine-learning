@@ -168,6 +168,11 @@ function isEnterPressed (e) {
   }
 }
 
+function isClicked() {
+  Game.keyPressed = true;
+}
+
 window.addEventListener('keydown', isEnterPressed);
+window.addEventListener('click', isClicked);
 
 Game.render(0, 0);
